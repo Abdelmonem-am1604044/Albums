@@ -1,25 +1,27 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
-const Header = () => {
-	const { textStyle, viewStyle } = styles;
-
-	return (
-		<View style={viewStyle}>
-			<Text style={textStyle}> Albums </Text>
-		</View>
-	);
-};
-
-const styles = {
+const styles = StyleSheet.create({
 	viewStyle: {
-		backgroundColor: 'red'
+		backgroundColor: '#939393',
+		justifyContent: 'center',
+		borderRadius: 2,
+		alignItems: 'center',
+		shadowColor: '#000',
+		shadowOffset: { width: 0, height: 2 },
+		shadowOpacity: 0.8,
+		shadowRadius: 2
 	},
 	textStyle: {
 		fontSize: 25,
-		textAlign: 'center',
-		color: 'white'
+		color: 'black'
 	}
-};
+});
+
+const Header = ({ text }) => (
+	<View style={styles.viewStyle}>
+		<Text style={styles.textStyle}> {text} </Text>
+	</View>
+);
 
 export default Header;
